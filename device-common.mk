@@ -16,7 +16,9 @@
 
 LOCAL_PATH := device/samsung/universal7580-common
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-havoc
 
 # Audio
 PRODUCT_PACKAGES += \

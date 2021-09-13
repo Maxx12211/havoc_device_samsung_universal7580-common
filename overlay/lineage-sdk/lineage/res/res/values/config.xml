@@ -19,6 +19,7 @@
         <item>restart_download</item>
      </string-array>
 
+    <resources>
     <!-- Button backlight control. Possible values are:
             0 - Not supported
             1 - Supported, but only on/off mode

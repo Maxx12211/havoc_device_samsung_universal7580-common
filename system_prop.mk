@@ -49,3 +49,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Define default initial receive window size in segments.
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tcp.default_init_rwnd=60
+
+# ADB
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+ro.adb.secure=0
+ro.debuggable=1
+ro.secure=0

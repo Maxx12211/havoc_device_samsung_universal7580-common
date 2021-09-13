@@ -76,6 +76,12 @@ TARGET_LINUX_KERNEL_VERSION := 3.10
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/universal7580
 
+# Charging mode
+BOARD_CHARGER_SHOW_PERCENTAGE := true
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
+BOARD_BATTERY_DEVICE_NAME := battery
+
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true

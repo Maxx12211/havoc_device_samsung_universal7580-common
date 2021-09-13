@@ -18,7 +18,7 @@ LOCAL_PATH := device/samsung/universal7580-common
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-havoc
+    $(LOCAL_PATH)/overlay-dot
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -192,6 +192,8 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
+
+
 
 # Wifi
 PRODUCT_PACKAGES += \

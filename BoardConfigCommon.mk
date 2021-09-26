@@ -46,7 +46,7 @@ TARGET_CPU_VARIANT := cortex-a53
 
 # Kernel
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+    HOSTCFLAGS="-Wno-unused-command-line-argument"
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
@@ -63,7 +63,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_IMAGE_NAME := Image
 #BOARD_KERNEL_CMDLINE := The bootloader ignores the cmdline from the boot.img
 BOARD_KERNEL_SEPARATED_DT := true
-TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+#TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 BOARD_ROOT_EXTRA_FOLDERS += efs cpefs
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 

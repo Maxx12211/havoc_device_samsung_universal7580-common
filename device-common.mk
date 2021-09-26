@@ -18,7 +18,19 @@ LOCAL_PATH := device/samsung/universal7580-common
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-dot
+    $(LOCAL_PATH)/overlay-octavi
+
+# GMS priv-app permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-google.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-google.xml
+
+
+# Prebuilt Packages
+PRODUCT_PACKAGES += \
+    Wallpapers\
+    Gboad\
+    QPGallery\
+    opencamera
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -61,7 +73,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
 
 # Flat device tree for boot image
-PRODUCT_HOST_PACKAGES += \
+#PRODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
 # GPS

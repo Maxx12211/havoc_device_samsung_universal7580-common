@@ -18,7 +18,7 @@ LOCAL_PATH := device/samsung/universal7580-common
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-havoc
+    $(LOCAL_PATH)/overlay-ssos
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
 
 # Flat device tree for boot image
-PRODUCT_HOST_PACKAGES += \
+ PRODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
 # GPS
@@ -205,6 +205,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     android.hardware.wifi@1.0-service.legacy
 
+#misc
+#$(shell mkdir -p out/target/product/a3xelte && cp -r device/samsung/universal7580-common/prebuilt/kernel out/target/product/a3xelte)
+#$(shell mkdir -p out/soong/.intermediates/vendor/ssos/build/soong && cp -r device/samsung/universal7580-common/prebuilt/build out/soong/.intermediates/vendor/ssos)
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 

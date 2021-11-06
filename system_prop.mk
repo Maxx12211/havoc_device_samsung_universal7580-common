@@ -32,11 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.direct.interface=p2p-dev-wlan0 \
     net.tethering.noprovisioning=true
-
-# USB
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
+    
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.ccodec=0

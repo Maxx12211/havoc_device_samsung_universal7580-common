@@ -63,7 +63,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_IMAGE_NAME := Image
 #BOARD_KERNEL_CMDLINE := The bootloader ignores the cmdline from the boot.img
 BOARD_KERNEL_SEPARATED_DT := true
-TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+#TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 BOARD_ROOT_EXTRA_FOLDERS += efs cpefs
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
@@ -76,6 +76,8 @@ TARGET_LINUX_KERNEL_VERSION := 3.10
 # BOARD_PREBUILT_BOOTIMAGE := $(LOCAL_PATH)prebuilt/boot.img
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/universal7580
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL= $(LOCAL_PATH)/prebuilt/Image
 
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true

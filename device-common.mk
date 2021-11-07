@@ -61,8 +61,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
 
 # Flat device tree for boot image
- PRODUCT_HOST_PACKAGES += \
-    dtbhtoolExynos
+# PRODUCT_HOST_PACKAGES += \
+#    dtbhtoolExynos
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -207,7 +207,10 @@ PRODUCT_PACKAGES += \
 
 #misc
 #$(shell mkdir -p out/target/product/a3xelte && cp -r device/samsung/universal7580-common/prebuilt/kernel out/target/product/a3xelte)
-#$(shell mkdir -p out/soong/.intermediates/vendor/ssos/build/soong && cp -r device/samsung/universal7580-common/prebuilt/build out/soong/.intermediates/vendor/ssos)
+$(shell mkdir -p out/target/product/a3xelte/obj && cp -r device/samsung/universal7580-common/prebuilt/dt.img out/target/product/a3xelte)
+$(shell mkdir -p build/make/core/prebuilt && cp -r device/samsung/universal7580-common/prebuilt/Image build/make/core/prebuilt)
+$(shell mkdir -p hardware/samsung/prebuilt && cp -r device/samsung/universal7580-common/prebuilt/Image hardware/samsung/prebuilt)
+$(shell mkdir -p out/soong/.intermediates/vendor/ssos/build/soong && cp -r device/samsung/universal7580-common/prebuilt/build out/soong/.intermediates/vendor/ssos)
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 

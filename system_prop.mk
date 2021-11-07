@@ -49,3 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Define default initial receive window size in segments.
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tcp.default_init_rwnd=60
+
+# Blur
+persist.sys.sf.disable_blurs=1
+ro.sf.blurs_are_expensive=1

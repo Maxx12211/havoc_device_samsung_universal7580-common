@@ -51,8 +51,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.tcp.default_init_rwnd=60
     
 # ADB
-persist.service.adb.enable=1
-persist.service.debuggable=1
+persist.service.adb.enable=0
+persist.service.debuggable=0
 persist.sys.usb.config=mtp,adb
 ro.adb.secure=0
 ro.debuggable=1
@@ -60,4 +60,3 @@ ro.secure=0
 
 # Blur
 persist.sys.sf.disable_blurs=1
-ro.sf.blurs_are_expensive=1

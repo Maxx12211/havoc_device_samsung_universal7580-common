@@ -90,11 +90,9 @@
 /data/nfc(/.*)?              u:object_r:nfc_data_file:s0
 /data/\.cid\.info                  u:object_r:wifi_data_file:s0
 /data/misc/conn/\.wifiver\.info    u:object_r:wifi_data_file:s0
-<<<<<<< HEAD
 # /data/misc/radio(/.*)?       u:object_r:radio_data_file:s0
 =======
 #/data/misc/radio(/.*)?       u:object_r:radio_data_file:s0
->>>>>>> de076c1869dfd02b4292fadd8b0743d18d5c6f64
 /data/vendor/display(/.*)?   u:object_r:display_vendor_data_file:s0
 
 # gps

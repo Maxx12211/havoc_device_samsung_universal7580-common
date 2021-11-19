@@ -18,7 +18,7 @@ LOCAL_PATH := device/samsung/universal7580-common
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-havoc
+    $(LOCAL_PATH)/overlay-dot
 
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
@@ -210,7 +210,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.legacy
 
 # Remove WallpapersBReel2020
-$(shell mkdir -p vendor/gapps/product/packages/apps/WallpapersBReel2020 && rm -rf vendor/gapps/product/packages/apps/WallpapersBReel2020 && cp -r device/samsung/universal7580-common/RemovePackages/config.txt vendor/gapps && rm -rf vendor/gapps/config.mk && mv vendor/gapps/config.txt vendor/gapps/config.mk)
+# $(shell mkdir -p vendor/gapps/product/packages/apps/WallpapersBReel2020 && rm -rf vendor/gapps/product/packages/apps/WallpapersBReel2020 && cp -r device/samsung/universal7580-common/RemovePackages/config.txt vendor/gapps && rm -rf vendor/gapps/config.mk && mv vendor/gapps/config.txt vendor/gapps/config.mk)
 
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk

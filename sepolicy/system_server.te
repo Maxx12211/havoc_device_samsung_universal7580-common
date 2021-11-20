@@ -59,3 +59,11 @@ unix_socket_connect(system_server, property, gpsd)
 get_prop(system_server, exported_camera_prop);
 get_prop(system_server, userspace_reboot_exported_prop);
 get_prop(system_server, userspace_reboot_config_prop);
+
+# zygote
+allow system_server app_zygote:process getpgid;
+
+# debug
+allow system_server debugfs:file read;
+allow system_server debugfs:file open;
+allow system_server debugfs:file getattr;

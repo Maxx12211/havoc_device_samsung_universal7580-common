@@ -70,10 +70,13 @@
          so that applications can still use their own mechanisms. -->	
     <bool name="config_enableAutoPowerModes">true</bool>
 
+<<<<<<< HEAD
     <!-- Defines the actions shown in advanced reboot submenu -->
     <string-array name="config_restartActionsList">
         <item>restart</item>
         <item>restart_recovery</item>
         <item>restart_download</item>
      </string-array>
+=======
+>>>>>>> e0d9ba7 (universal7580: adress selinux denials)
 </resources>

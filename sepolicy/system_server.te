@@ -55,3 +55,18 @@ allow system_server sysfs_input:file rw_file_perms;
 allow system_server proc_input_devices:file r_file_perms;
 
 unix_socket_connect(system_server, property, gpsd)
+<<<<<<< HEAD
+=======
+
+get_prop(system_server, exported_camera_prop);
+get_prop(system_server, userspace_reboot_exported_prop);
+get_prop(system_server, userspace_reboot_config_prop);
+
+# zygote
+allow system_server app_zygote:process getpgid;
+
+# debug
+allow system_server debugfs:file read;
+allow system_server debugfs:file open;
+allow system_server debugfs:file getattr;
+>>>>>>> e0d9ba7 (universal7580: adress selinux denials)

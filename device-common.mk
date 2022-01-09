@@ -25,9 +25,13 @@ PRODUCT_PACKAGES += \
 		    Gboad
 
 # FastCharge
-PRODUCT_PACKAGES += \
-	  vendor.lineage.fastcharge@1.0-service.samsung
+# PRODUCT_PACKAGES += \
+#	  vendor.lineage.fastcharge@1.0-service.samsung
 
+# Power
+PRODUCT_PACKAGES += \
+		android.hardware.power@1.0
+		
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.universal7580 \
@@ -214,8 +218,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     android.hardware.wifi@1.0-service.legacy
 
-# Remove WallpapersBReel2020
-$(shell mkdir -p vendor/gapps/product/packages/apps/WallpapersBReel2020 && rm -rf vendor/gapps/product/packages/apps/WallpapersBReel2020 && cp -r device/samsung/universal7580-common/RemovePackages/config.txt vendor/gapps && rm -rf vendor/gapps/config.mk && mv vendor/gapps/config.txt vendor/gapps/config.mk)
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 

@@ -67,3 +67,6 @@ allow system_server app_zygote:process getpgid;
 allow system_server debugfs:file read;
 allow system_server debugfs:file open;
 allow system_server debugfs:file getattr;
+
+# proc
+allow system_server proc_dt_firmware:dir search;

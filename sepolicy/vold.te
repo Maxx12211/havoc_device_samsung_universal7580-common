@@ -1,5 +1,6 @@
 # /efs
 allow vold efs_file:dir r_dir_perms;
+
 # /dev/block/mmcblk0p[0-9]
 allow vold emmcblk_device:dir create_dir_perms;
 allow vold emmcblk_device:blk_file { setattr unlink rw_file_perms };
@@ -9,3 +10,12 @@ r_dir_file(vold, proc_dt_firmware)
 
 # sswap
 allow vold sysfs_sswap:file w_file_perms;
+
+# hwc bootctl
+allow vold hal_bootctl_hwservice:hwservice_manager find;
+
+# /efs
+allow vold sec_efs_file:dir read;
+allow vold sec_efs_file:dir open;
+allow vold sec_efs_file:dir ioctl;
+

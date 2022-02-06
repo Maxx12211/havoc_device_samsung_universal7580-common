@@ -42,3 +42,7 @@ allow vendor_toolbox {
     wifi_efs_file
     unlabeled
 }:file { r_file_perms setattr };
+
+# For audio dac
+allow vendor_toolbox self:capability { dac_override dac_read_search sys_admin };
+

@@ -163,8 +163,12 @@
 /(vendor|system/vendor)/bin/sswap            u:object_r:sswap_exec:s0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #/(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@1\.0-service\.samsung            u:object_r:hal_lineage_fastcharge_default_exec:s0
+=======
+
+>>>>>>> 79aee15 (universal7580-common: add sepolicy entries, fix override persist.sys.sf.disable_blurs, remove fastcharge (not working))
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-exynos    u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung                 u:object_r:hal_lineage_touch_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.3-service\.clearkey                u:object_r:hal_drm_clearkey_exec:s0

@@ -18,12 +18,8 @@ LOCAL_PATH := device/samsung/universal7580-common
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-havoc
+    $(LOCAL_PATH)/overlay-lineage
 
-# Prebuilt Packages
-PRODUCT_PACKAGES += \
-		    Gboad
-				
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.universal7580 \
@@ -31,8 +27,10 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     tinymix \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio.effect@2.0-service \
+    android.hardware.audio.service \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy.conf \
@@ -70,7 +68,8 @@ PRODUCT_HOST_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl \
+    gpsd_shim
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
@@ -82,9 +81,10 @@ PRODUCT_PACKAGES += \
     libfimg \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.1-impl  \
     android.hardware.graphics.mapper@2.0-impl \
     libhwc2on1adapter
+
 
 # Health
 PRODUCT_PACKAGES += \
@@ -103,7 +103,11 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.samsung
+    android.hardware.light-service.samsung
+
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v30/arm/arch-arm-armv7-a-neon/shared/vndk-core/android.hardware.light-V1-ndk_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.light-V1-ndk_platform.so
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -114,9 +118,32 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
+# OMX
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.ccodec=0 \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0 \
+    vendor.mediacodec.binder.size=4 \
+    media.stagefright.thumbnail.prefer_hw_codecs=true
+
 # Memory
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
+
+# Memory Optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.use_psi=false \
+    ro.lmk.critical=0 \
+    ro.lmk.low=950 \
+    ro.lmk.swap_free_low_percentage=15 \
+    ro.vendor.qti.am.reschedule_service=true \
+    ro.vendor.qti.sys.fw.use_trim_settings=true \
+    ro.vendor.qti.sys.fw.trim_empty_percent=50 \
+    ro.vendor.qti.sys.fw.trim_cache_percent=100 \
+    ro.vendor.qti.sys.fw.empty_app_percent=25 \
+    ro.config.max_starting_bg=2
 
 # Mobicore
 PRODUCT_PACKAGES += \
@@ -126,7 +153,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.exynos
+    android.hardware.power@1.0-service.exynos \
+		android.hardware.power@1.0
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -179,6 +207,7 @@ PRODUCT_PACKAGES += \
     libcamera_client_shim \
     libexynoscamera_shim \
     libstagefright_shim \
+    mediaserver.rc \
     libui_shim \
     libcutils_shim
 
@@ -210,13 +239,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     android.hardware.wifi@1.0-service.legacy
 
-# Remove WallpapersBReel2020
-$(shell mkdir -p vendor/gapps/product/packages/apps/WallpapersBReel2020 && rm -rf vendor/gapps/product/packages/apps/WallpapersBReel2020 && cp -r device/samsung/universal7580-common/RemovePackages/config.txt vendor/gapps && rm -rf vendor/gapps/config.mk && mv vendor/gapps/config.txt vendor/gapps/config.mk)
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
-
-# Prebuilts
--include $(LOCAL_PATH)apps/Android.mk
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)

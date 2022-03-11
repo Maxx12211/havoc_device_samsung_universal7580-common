@@ -26,6 +26,15 @@ ifneq ($(TARGET_DEVICE), gvwifi)
 TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/ril/include
 endif
 
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
+# VNDK VERSION
+BOARD_VNDK_VERSION := current
+
+# Dedupe VNDK libraries with identical core variants.
+TARGET_VNDK_USE_CORE_VARIANT := true
+
 # Firmware
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -117,6 +126,9 @@ BOARD_USE_CUSTOM_COMPONENT_SUPPORT := true
 BOARD_USE_VIDEO_EXT_FOR_WFD_HDCP := false
 BOARD_USE_SINGLE_PLANE_IN_DRM := false
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # HWComposer
 BOARD_USES_VPP := true
 #BOARD_USES_VPP_V2 := true // 8890 only
@@ -197,4 +209,5 @@ TARGET_HAS_MEMFD_BACKPORT := true
 TARGET_LD_SHIM_LIBS += \
     /system/bin/mediaserver|/system/lib/libstagefright_shim.so \
     /system/lib/libsec-ril.so|/vendor/lib/libcutils_shim.so \
-    /system/lib/libsec-ril-dsds.so|/vendor/lib/libcutils_shim.so
+    /system/lib/libsec-ril-dsds.so|/vendor/lib/libcutils_shim.so \
+    /vendor/bin/gpsd|/vendor/lib/gpsd_shim.so

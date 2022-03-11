@@ -63,7 +63,7 @@ get_prop(system_server, userspace_reboot_config_prop);
 # zygote
 allow system_server app_zygote:process getpgid;
 
-# debug
+# debugfs
 allow system_server debugfs:file read;
 allow system_server debugfs:file open;
 allow system_server debugfs:file getattr;

@@ -20,10 +20,3 @@ allow kernel wifi_data_file:file rw_file_perms;
 allow kernel tmpfs:dir search;
 
 allow kernel self:capability sys_module;
-
-# device dir
-allow kernel device:dir write;
-allow kernel device:dir add_name;
-allow kernel device:blk_file create;
-allow kernel device:blk_file setattr;
-

@@ -1,5 +1,0 @@
-allow gmscore_app hal_memtrack_hwservice:hwservice_manager find;
-allow gmscore_app debugfs:dir read;
-allow gmscore_app debugfs:dir open;
-allow gmscore_app theme_prop:file read;
-allow gmscore_app theme_prop:file open;

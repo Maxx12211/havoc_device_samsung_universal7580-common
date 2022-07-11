@@ -67,10 +67,9 @@
          (such as to be able to deliver an instant message to the device even when it is
          dozing).  This should be enabled if you have such services and expect apps to
          correctly use them when installed on your device.  Otherwise, keep this disabled
-         so that applications can still use their own mechanisms. -->
+         so that applications can still use their own mechanisms. -->	
     <bool name="config_enableAutoPowerModes">true</bool>
 
-<<<<<<< HEAD
 <<<<<<< HEAD
     <!-- Defines the actions shown in advanced reboot submenu -->
     <string-array name="config_restartActionsList">
@@ -80,9 +79,4 @@
      </string-array>
 =======
 >>>>>>> e0d9ba7 (universal7580: adress selinux denials)
-=======
-    <!-- AOSP WFD -->
-    <bool name="config_enableWifiDisplay">true</bool>
-    
->>>>>>> 79aee15 (universal7580-common: add sepolicy entries, fix override persist.sys.sf.disable_blurs, remove fastcharge (not working))
 </resources>

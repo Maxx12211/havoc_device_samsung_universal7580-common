@@ -23,7 +23,11 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
 		    Gboad
-				
+
+# FastCharge
+PRODUCT_PACKAGES += \
+	  vendor.lineage.fastcharge@1.0-service.samsung
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.universal7580 \

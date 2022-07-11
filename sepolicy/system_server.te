@@ -69,10 +69,4 @@ allow system_server app_zygote:process getpgid;
 allow system_server debugfs:file read;
 allow system_server debugfs:file open;
 allow system_server debugfs:file getattr;
-<<<<<<< HEAD
 >>>>>>> e0d9ba7 (universal7580: adress selinux denials)
-=======
-
-# proc
-allow system_server proc_dt_firmware:dir search;
->>>>>>> 79aee15 (universal7580-common: add sepolicy entries, fix override persist.sys.sf.disable_blurs, remove fastcharge (not working))

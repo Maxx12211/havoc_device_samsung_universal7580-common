@@ -7,8 +7,6 @@ allow vold emmcblk_device:blk_file { setattr unlink rw_file_perms };
 
 allow vold sysfs_mmc:file w_file_perms;
 r_dir_file(vold, proc_dt_firmware)
-<<<<<<< HEAD
-=======
 
 # sswap
 allow vold sysfs_sswap:file w_file_perms;
@@ -21,4 +19,3 @@ allow vold sec_efs_file:dir read;
 allow vold sec_efs_file:dir open;
 allow vold sec_efs_file:dir ioctl;
 
->>>>>>> 79aee15 (universal7580-common: add sepolicy entries, fix override persist.sys.sf.disable_blurs, remove fastcharge (not working))
